@@ -83,8 +83,6 @@ public class TypewiseAlert {
             System.out.printf("To: %s\n", recepient);
             System.out.println("Hi, the temperature is too high\n");
             break;
-        case NORMAL:
-            break;
         }
     }
 }
