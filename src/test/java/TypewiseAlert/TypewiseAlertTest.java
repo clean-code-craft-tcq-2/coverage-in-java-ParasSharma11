@@ -12,4 +12,15 @@ public class TypewiseAlertTest
       assertTrue(TypewiseAlert.inferBreach(12, 20, 30) ==
         TypewiseAlert.BreachType.TOO_LOW);
     }
+    
+    @Test
+    public void testClassifyTemperatureBreach() {
+        assertTrue(TypewiseAlert.classifyTemperatureBreach(TypewiseAlert.CoolingType.PASSIVE_COOLING,
+                                                           50) == TypewiseAlert.BreachType.TOO_HIGH);
+        assertTrue(TypewiseAlert.classifyTemperatureBreach(TypewiseAlert.CoolingType.PASSIVE_COOLING,
+                                                           -1) == TypewiseAlert.BreachType.TOO_LOW);
+        assertTrue(TypewiseAlert.classifyTemperatureBreach(TypewiseAlert.CoolingType.PASSIVE_COOLING,
+                                                           30) == TypewiseAlert.BreachType.NORMAL);
+        
+    }
 }
